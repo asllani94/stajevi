@@ -14,7 +14,7 @@ package com.uygulama.stajevi.adapter;
         import android.widget.BaseAdapter;
         import android.widget.TextView;
         import com.android.volley.toolbox.ImageLoader;
-        import com.uygulama.stajevi.Custom.FeedImageView;
+        import com.uygulama.stajevi.costum.FeedImageView;
         import com.uygulama.stajevi.R;
         import com.uygulama.stajevi.app.AppController;
         import com.uygulama.stajevi.model.News;

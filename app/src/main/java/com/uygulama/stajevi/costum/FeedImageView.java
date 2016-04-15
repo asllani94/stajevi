@@ -1,4 +1,4 @@
-package com.uygulama.stajevi.Custom;
+package com.uygulama.stajevi.costum;
 
 
 

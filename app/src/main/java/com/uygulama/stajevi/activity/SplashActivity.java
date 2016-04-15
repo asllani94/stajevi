@@ -1,7 +1,5 @@
-package com.uygulama.stajevi;
+package com.uygulama.stajevi.activity;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +7,8 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.uygulama.stajevi.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
     private void count(){//count method to display company logo for 4 seconds and then proceed to Giris Activity
-        new CountDownTimer(4000, 1000) {
+        new CountDownTimer(3500, 1000) {
 
             public void onTick(long millisUntilFinished) {
 

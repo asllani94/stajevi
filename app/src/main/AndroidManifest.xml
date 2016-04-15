@@ -10,9 +10,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/patitull">
-        <activity android:name=".GirisActivity" />
+        <activity android:name=".activity.GirisActivity" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:theme="@style/patitull">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

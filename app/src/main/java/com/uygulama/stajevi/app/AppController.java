@@ -4,13 +4,19 @@ package com.uygulama.stajevi.app;
 
 
 import android.app.Application;
+import android.net.SSLSessionCache;
 import android.text.TextUtils;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.uygulama.stajevi.ClientSSLSocketFactory;
 import com.uygulama.stajevi.volley.LruBitmapCache;
+
+import javax.net.SocketFactory;
+import javax.net.ssl.SSLSocketFactory;
 
 
 public class AppController extends Application {
@@ -35,9 +41,9 @@ public class AppController extends Application {
 
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
-            mRequestQueue = Volley.newRequestQueue(getBaseContext());
+            SSLSocketFactory ssf = (SSLSocketFactory) ClientSSLSocketFactory.getDefault();
+            mRequestQueue = Volley.newRequestQueue(getBaseContext(),new HurlStack(null,new ClientSSLSocketFactory(ssf)));
         }
-
         return mRequestQueue;
     }
 

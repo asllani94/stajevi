@@ -5,7 +5,7 @@
     android:id="@+id/fragmentLogin"
     android:layout_height="match_parent"
 
-    tools:context="com.uygulama.stajevi.UserLogin">
+    tools:context=".fragment.UserLogin">
 
     <include
         android:id="@+id/tool_bar"

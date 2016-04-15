@@ -1,4 +1,4 @@
-package com.uygulama.stajevi;
+package com.uygulama.stajevi.activity;
 
 
 
@@ -8,7 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.uygulama.stajevi.activity.MainActivity;
+import com.uygulama.stajevi.interfaces.Bridge;
+import com.uygulama.stajevi.R;
+import com.uygulama.stajevi.fragment.LoginFragment;
+import com.uygulama.stajevi.fragment.RegisterFragment;
+import com.uygulama.stajevi.fragment.UserLogin;
 
 
 public class GirisActivity extends AppCompatActivity implements Bridge {

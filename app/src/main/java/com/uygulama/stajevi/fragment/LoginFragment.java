@@ -1,13 +1,15 @@
-package com.uygulama.stajevi;
+package com.uygulama.stajevi.fragment;
 
 
 import android.os.Bundle;
 import android.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.uygulama.stajevi.interfaces.Bridge;
+import com.uygulama.stajevi.R;
 
 
 public class LoginFragment extends Fragment {

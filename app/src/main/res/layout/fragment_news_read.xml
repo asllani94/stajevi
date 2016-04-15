@@ -6,6 +6,11 @@
     <TextView
         android:id="@+id/NEWS_TITLE"
         android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:text="Staj evi acildi!"
+        android:textColor="@color/black"
+        android:gravity="center"
         android:layout_height="wrap_content"/>
 
     <ScrollView
@@ -19,6 +24,7 @@
         <TextView
             android:id="@+id/NEWS_DESCRIPTION"
             android:layout_width="fill_parent"
+            android:textSize="17sp"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"/>
 

@@ -6,7 +6,7 @@
     android:background="@color/defaultThemeGray"
     android:id="@+id/main"
 
-    tools:context="com.uygulama.stajevi.GirisActivity">
+    tools:context=".activity.GirisActivity">
 
 
 

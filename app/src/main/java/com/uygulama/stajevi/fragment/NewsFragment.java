@@ -1,21 +1,27 @@
-package com.uygulama.stajevi;
+package com.uygulama.stajevi.fragment;
 
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 
 import com.android.volley.Cache;
-import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.uygulama.stajevi.activity.MainActivity;
+import com.uygulama.stajevi.interfaces.Bridge;
+import com.uygulama.stajevi.R;
 import com.uygulama.stajevi.adapter.FeedListAdapter;
 import com.uygulama.stajevi.app.AppController;
+import com.uygulama.stajevi.interfaces.NewsInterface;
 import com.uygulama.stajevi.model.News;
 
 import org.json.JSONArray;
@@ -31,6 +37,7 @@ public class NewsFragment extends Fragment {
     private ListView listView;
     private FeedListAdapter listAdapter;
     private List<News> feedItems;
+    private NewsInterface newsInterface;
     private String URL_FEED = "https://stajevi.com/api/Haber/Listele";
 
 
@@ -48,8 +55,17 @@ public class NewsFragment extends Fragment {
         listAdapter = new FeedListAdapter(getActivity(), feedItems);
 
 
-        listView.setAdapter(listAdapter);
+        newsInterface=(NewsInterface)getActivity();
 
+        listView.setAdapter(listAdapter);
+listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+      News n=  (News)listAdapter.getItem(position);
+        newsInterface.transferNews(n.getNewsTitle(), n.getNewsDescription());
+        //Toast.makeText(getContext(),n.getNewsShortTitle(),Toast.LENGTH_SHORT).show();
+    }
+});
 
         return rootView;
     }
@@ -118,15 +134,21 @@ public class NewsFragment extends Fragment {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError volleyError) {
+                    getData();
                     volleyError.printStackTrace();
                 }
             });
-            jsonReq.
-                    setRetryPolicy(new DefaultRetryPolicy(0, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
 
             AppController.getInstance().addToRequestQueue(jsonReq);
         }
 
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        AppCompatActivity mainactivity= ((AppCompatActivity) getContext());
+        mainactivity.getSupportActionBar().setTitle("Haberler");
     }
 
 

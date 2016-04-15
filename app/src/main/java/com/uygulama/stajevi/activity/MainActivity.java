@@ -14,14 +14,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.uygulama.stajevi.NewsFragment;
+import com.uygulama.stajevi.Functions;
+import com.uygulama.stajevi.fragment.DrawerFragment;
+import com.uygulama.stajevi.fragment.NewsFragment;
 import com.uygulama.stajevi.R;
+import com.uygulama.stajevi.fragment.NewsReadFragment;
+import com.uygulama.stajevi.interfaces.NewsInterface;
 
 
-
-public class MainActivity extends AppCompatActivity implements DrawerFragment.FragmentDrawerListener{
+public class MainActivity extends AppCompatActivity implements DrawerFragment.FragmentDrawerListener,NewsInterface{
 
     private DrawerFragment drawerFragment;
+    private int container_id=R.id.container_body;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +89,6 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Fr
                 break;
             case 2:
                fragment=new NewsFragment();
-                title = getString(R.string.title_haber);
                 break;
             case 3:
                 // fragment = new Fragment();
@@ -108,15 +112,42 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Fr
         }
 
         if (fragment != null) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_body, fragment);
-            fragmentTransaction.commit();
 
-            // set the toolbar title
-            getSupportActionBar().setTitle(title);
+            Functions c=new Functions();
+            c.createFragment(this,fragment,container_id);
         }
-        getSupportActionBar().setTitle(title);
+
     }
+
+
+    @Override
+    public void transferNews(String title, String content) {
+        //Using function class to create a new Fragment
+        Functions c=new Functions();
+
+        //Using bundle to pass data from activity to fragment
+        Bundle bundle = new Bundle();
+        bundle.putString("TITLE", title);
+        bundle.putString("CONTENT", content);
+
+        //Creating a new news read fragment and adding bundle to it
+        NewsReadFragment newsReadFragment = new NewsReadFragment();
+        newsReadFragment.setArguments(bundle);
+
+     //creating and running the new fragment
+        c.createFragment(this,newsReadFragment,container_id);
+
+    }
+
+    //when hardware backbutton is pressed..get the fragment added to stack
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 
 }

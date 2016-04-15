@@ -1,4 +1,4 @@
-package com.uygulama.stajevi.activity;
+package com.uygulama.stajevi.fragment;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -1,4 +1,4 @@
-package com.uygulama.stajevi;
+package com.uygulama.stajevi.interfaces;
 
 /**
  * Created by asllani94 on 21.03.2016.
