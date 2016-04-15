@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/fragmentSelect"
+    android:orientation="vertical"
+
+    android:gravity="bottom"
+    android:background="@drawable/arkaplan"
+    tools:context="com.uygulama.stajevi.LoginFragment">
+
+
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/transparent"
+        android:layout_height="wrap_content">
+
+<Button
+    android:layout_width="330dp"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:text="Giris Yap"
+    android:textColor="@color/white"
+    android:textStyle="bold"
+    android:background="@drawable/yellow_buttons_border"
+    android:id="@+id/btnLogin"
+    android:textAllCaps="false"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+        <Button
+            android:layout_width="330dp"
+            android:id="@+id/registerBtn"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yellow_buttons_border"
+            android:text="Uye Ol"
+            android:textAllCaps="false"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+        <Button
+            android:layout_width="330dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:id="@+id/btnFB"
+            android:text="Facebook ile Giris Yap"
+            android:background="@drawable/fb_buttons_border"
+
+
+            android:textColor="@color/backcolor"
+            android:textAllCaps="false"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+
+    </LinearLayout>
+
+</FrameLayout>

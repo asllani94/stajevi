@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Staj Evi</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kullanci_adi">Kullanci Adi</string>
+    <string name="password_hint">Sifre</string>
+    <string name="repeat_password">Re-Enter Password</string>
+    <string name="password">Password</string>
+    <string name="email">E-mail</string>
+    <string name="name">Adi</string>
+
+
+    <!-- part of navigation drawer and toolbar-->
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+
+    <!-- items for drawer array-->
+    <string name="nav_item_profilim">Profilim</string>
+    <string name="nav_item_staj_ilanlari">Staj Ilanlari</string>
+    <string name="nav_item_haber">Haber</string>
+    <string name="nav_item_blog">Blog</string>
+    <string name="nav_item_kurslar">Kurslar</string>
+    <string name="nav_item_iletisim">Iletisim</string>
+    <string name="nav_item_cikis">Cikis</string>
+
+    <!-- navigation drawer item array  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_profilim</item>
+        <item>@string/nav_item_staj_ilanlari</item>
+        <item>@string/nav_item_haber</item>
+        <item>@string/nav_item_blog</item>
+        <item>@string/nav_item_kurslar</item>
+        <item>@string/nav_item_iletisim</item>
+        <item>@string/nav_item_cikis</item>
+
+    </string-array>
+
+    <!-- titles of tooblar-->
+
+    <string name="title_profilim">Profilim</string>
+    <string name="title_staj_ilanlari">Staj Ilanlari</string>
+    <string name="title_haber">Haber</string>
+    <string name="title_blog">Blog</string>
+    <string name="title_kurslar">Kurslar</string>
+    <string name="title_iletisim">Iletisim</string>
+    <string name="title_cikis">Cikis</string>
+    <string name="title_activity_main">Main Activity</string>
+
+
+    <array name="icon_array">
+        <item>@drawable/profile</item>
+        <item>@drawable/advert</item>
+        <item>@drawable/news</item>
+        <item>@drawable/blog</item>
+        <item>@drawable/course</item>
+        <item>@drawable/contact</item>
+        <item>@drawable/log_out</item>
+
+
+    </array>
+
+
+</resources>
