@@ -56,5 +56,8 @@ public class Functions {
         else
             return false;
     }
+    public boolean empty(){
+        return true;
+    }
 
 }
